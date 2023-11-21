@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.14.201",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -25,6 +26,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
+    "less": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.0"
@@ -32,6 +34,7 @@
   "dependencies": {
     "@craftjs/core": "^0.2.1",
     "antd": "^5.10.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0"

@@ -12,6 +12,7 @@ module.exports = {
     rules: {
         // 自定义规则
         'no-unused-vars': 'off',
-        'no-useless-constructor': 'off'
+        'no-useless-constructor': 'off',
+        '@typescript-eslint/no-explicit-any': 'off'
     }
 }
