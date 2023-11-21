@@ -1,7 +1,8 @@
+import { Framework } from "@/framework"
 export const Index = () => {
   return (
-    <div>
-      index
+    <div style={{ height: "100vh" }}>
+      <Framework />
     </div>
   )
 }

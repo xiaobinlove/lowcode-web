@@ -1,5 +1,5 @@
 export const Header = () => {
   return (
-    <div>left</div>
+    <div>header</div>
   )
 }
