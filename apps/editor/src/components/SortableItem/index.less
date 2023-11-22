@@ -1,0 +1,26 @@
+.lc-sortable-item {
+  position: relative;
+  min-width: 33.33%;
+  height: 33px;
+
+  &:hover {
+    border: 1px dashed red;
+  }
+
+  &--selected {
+    border: 2px solid red;
+  }
+
+  &__insertAfter {
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      left: 0;
+      right: 0;
+      height: 4px;
+      bottom: 0;
+    }
+  }
+
+}

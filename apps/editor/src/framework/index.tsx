@@ -3,6 +3,8 @@ import { Left } from "./Left"
 import { Right } from "./Right"
 import { Canvas } from "./Canvas"
 import './index.less'
+import * as componentsMap from '@lowcode/materials'
+console.log(componentsMap, 'componentsMap')
 export const Framework = () => {
   return (
     <div className="framework">
