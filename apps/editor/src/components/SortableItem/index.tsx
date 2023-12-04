@@ -1,33 +1,49 @@
-import { FC, ReactNode } from 'react'
-import { useSortable, UseSortableArguments } from '@dnd-kit/sortable'
-import classNames from 'classnames';
-import './index.less'
+import { FC, ReactNode } from "react";
+import { useSortable, UseSortableArguments } from "@dnd-kit/sortable";
+import classNames from "classnames";
+import { Schema } from "@lowcode/render-tree";
+import "./index.less";
+import { CSS } from "@dnd-kit/utilities";
 interface Props extends UseSortableArguments {
   children: ReactNode;
+  className?: string;
+  data: Schema | any;
 }
-export const SortableItem: FC<Props> = ({ children, id, ...res }) => {
+export const SortableItem: FC<Props> = ({
+  children,
+  id,
+  className,
+  data,
+  disabled,
+  ...res
+}) => {
   const {
     attributes,
     listeners,
-    isDragging,
-    over,
+    isSorting,
     setNodeRef,
+    transition,
+    transform,
   } = useSortable({
     id,
-    ...res
+    data,
+    disabled,
+    ...res,
   });
   return (
-    <div
-      className={classNames(
-        'lc-sortable-item',
-        over?.id === id && 'lc-sortable-item__insertAfter',
-        isDragging && 'lc-sortable-item--active',
-      )}
-      ref={setNodeRef}
-      {...attributes}
-      {...listeners}
-    >
-      {children}
-    </div>
-  )
-}
+    <>
+      <div
+        className={classNames("lc-sortable-item", className)}
+        style={{
+          transition,
+          transform: isSorting ? undefined : CSS.Translate.toString(transform),
+        }}
+        ref={setNodeRef}
+        {...attributes}
+        {...listeners}
+      >
+        {children}
+      </div>
+    </>
+  );
+};

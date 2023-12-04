@@ -1,10 +1,14 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
+import { ContainerPlaceholder } from '../ContainerPlaceholder'
+import './index.less'
 interface Props {
-
+  children?: ReactNode
 }
-export const LayoutItem: FC<Props> = (props) => {
+export const LayoutItem: FC<Props> = ({ children }) => {
   return (
-    <div>LayoutItem</div>
+    <div className="lc-layout-item">
+      {!children ? <ContainerPlaceholder /> : children}
+    </div>
   )
 }
 export default LayoutItem
